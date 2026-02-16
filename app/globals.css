@@ -1,118 +1,91 @@
-* {
-  scroll-behavior: smooth;
+@import "tailwindcss";
+
+@theme {
+  --font-inter: var(--font-inter), "Inter", sans-serif;
+  --font-playfair: var(--font-playfair), "Playfair Display", serif;
+  
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  
+  --color-accent: #f59e0b;
+  --color-dark: #111827;
 }
-body {
-  font-family: "Inter", sans-serif;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply text-gray-800 bg-white overflow-x-hidden;
+  }
 }
-.hero-gradient {
-  background: linear-gradient(
-    135deg,
-    rgba(15, 23, 42, 0.85) 0%,
-    rgba(30, 64, 175, 0.7) 100%
-  );
+
+@layer components {
+  .nav-link {
+    @apply transition-colors duration-300;
+  }
+  
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-2;
+  }
+  
+  .img-zoom {
+    @apply overflow-hidden;
+  }
+  
+  .img-zoom img {
+    @apply transition-transform duration-700;
+  }
+  
+  .img-zoom:hover img {
+    @apply scale-110;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-400;
+  }
 }
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(74, 222, 128, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
 }
-.glass-dark {
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+
+.pulse-dot {
+  animation: pulse-dot 2s infinite;
 }
-.card-hover {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
 }
-.card-hover:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-}
-.text-gradient {
-  background: linear-gradient(135deg, #1a56db, #60a5fa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+
 .floating {
   animation: floating 3s ease-in-out infinite;
 }
-@keyframes floating {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-.counter {
-  animation: countUp 2s ease-out forwards;
-}
-.slide-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
-}
-.slide-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+
 .nav-scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  @apply bg-white/90 backdrop-blur-md shadow-lg py-3!;
 }
-.nav-scrolled .nav-link {
-  color: #0f172a !important;
-}
-.nav-scrolled .nav-link:hover {
-  color: #1a56db !important;
-}
+
 .nav-scrolled .logo-text {
-  color: #0f172a !important;
+  @apply text-dark!;
 }
-.property-badge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  z-index: 10;
+
+.nav-scrolled .nav-link {
+  @apply text-gray-700! hover:text-primary-500!;
 }
-.img-zoom {
-  overflow: hidden;
-}
-.img-zoom img {
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.img-zoom:hover img {
-  transform: scale(1.1);
-}
-input:focus,
-select:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.3);
-}
-.pulse-dot {
-  animation: pulse 2s infinite;
-}
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
-  }
-}
-.marquee {
-  animation: marquee 30s linear infinite;
-}
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+
+.hero-gradient {
+  background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
 }

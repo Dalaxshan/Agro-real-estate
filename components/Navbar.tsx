@@ -1,0 +1,147 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { 
+  Home, 
+  Phone, 
+  Mail, 
+  Clock, 
+  Facebook, 
+  Instagram, 
+  Linkedin, 
+  Youtube, 
+  Heart, 
+  Menu, 
+  X,
+} from "lucide-react";
+import { cn } from "@/lib/utils";
+
+export const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: "Home", href: "#home" },
+    { name: "Properties", href: "#properties" },
+    { name: "Projects", href: "#projects" },
+    { name: "About", href: "#about" },
+    { name: "Contact", href: "#contact" },
+  ];
+
+  return (
+    <>
+      {/* Top Bar */}
+      <div className="bg-dark text-white text-sm py-2 hidden md:block border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+          <div className="flex items-center gap-6">
+            <span className="flex items-center gap-2">
+              <Phone className="w-3 h-3 text-accent" />
+              +94 11 234 5678
+            </span>
+            <span className="flex items-center gap-2">
+              <Mail className="w-3 h-3 text-accent" />
+              info@homenest.lk
+            </span>
+            <span className="flex items-center gap-2">
+              <Clock className="w-3 h-3 text-accent" />
+              Mon - Sat: 9:00 AM - 6:00 PM
+            </span>
+          </div>
+          <div className="flex items-center gap-4">
+            <a href="#" className="hover:text-accent transition"><Facebook className="w-4 h-4" /></a>
+            <a href="#" className="hover:text-accent transition"><Instagram className="w-4 h-4" /></a>
+            <a href="#" className="hover:text-accent transition"><Linkedin className="w-4 h-4" /></a>
+            <a href="#" className="hover:text-accent transition"><Youtube className="w-4 h-4" /></a>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Nav */}
+      <nav 
+        className={cn(
+          "fixed w-full z-50 transition-all duration-500 py-4 top-0 md:top-9",
+          isScrolled ? "nav-scrolled !top-0" : "bg-transparent md:bg-transparent"
+        )}
+      >
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+          <a href="#" className="flex items-center gap-3 group">
+            <div className="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform">
+              <Home className="text-white w-6 h-6" />
+            </div>
+            <span className={cn(
+              "logo-text text-2xl font-bold transition-colors",
+              isScrolled ? "text-dark" : "text-white"
+            )}>
+              Home<span className="text-accent">Nest</span>
+            </span>
+          </a>
+
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a 
+                key={link.name}
+                href={link.href} 
+                className={cn(
+                  "nav-link font-medium",
+                  isScrolled ? "text-gray-700 hover:text-primary-500" : "text-white hover:text-accent"
+                )}
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+
+          <div className="hidden lg:flex items-center gap-4">
+            <a href="#" className={cn(
+              "flex items-center gap-1 font-medium hover:text-accent transition",
+              isScrolled ? "text-gray-700" : "text-white"
+            )}>
+              <Heart className="w-4 h-4" /> Saved
+            </a>
+            <button className="bg-accent hover:bg-amber-600 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50">
+              List Property
+            </button>
+          </div>
+
+          {/* Mobile Toggle */}
+          <button 
+            className={cn("lg:hidden text-2xl", isScrolled ? "text-dark" : "text-white")}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-2xl p-6 mt-2 animate-in slide-in-from-top duration-300">
+            <div className="flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <a 
+                  key={link.name}
+                  href={link.href} 
+                  className="text-gray-800 hover:text-primary-500 font-medium py-2 border-b border-gray-100"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ))}
+              <button className="bg-accent text-white text-center px-6 py-3 rounded-full font-semibold mt-2">
+                List Property
+              </button>
+            </div>
+          </div>
+        )}
+      </nav>
+    </>
+  );
+};
