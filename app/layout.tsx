@@ -13,7 +13,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "HomeNest | Find Your Dream Home",
+  title: "Agro property | Find Your Dream Land in Sri Lanka",
   description: "Sri Lanka's premier real estate platform. Discover premium properties across Sri Lanka.",
 };
 

@@ -74,7 +74,7 @@ export const About = () => {
               <span className="text-gradient">Your Dream Home</span>
             </h2>
             <p className="text-gray-500 text-lg mb-8 leading-relaxed">
-              With over 12 years of experience in Sri Lankan real estate, HomeNest has helped thousands of families find their perfect home. Our commitment to excellence and customer satisfaction sets us apart.
+              With over 12 years of experience in Sri Lankan real estate,  has helped thousands of families find their perfect home. Our commitment to excellence and customer satisfaction sets us apart.
             </p>
 
             <div className="space-y-6">

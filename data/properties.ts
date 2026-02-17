@@ -4,6 +4,12 @@ export interface Property {
   location: string;
   embedUrl: string;
   virtualTourUrl?: string;
+  blueprint?: {
+    title: string;
+    fileUrl: string;     
+    fileName: string;    
+    fileType?: "pdf" | "image";
+  };
   price: string;
   priceValue: number; 
   type: "FOR SALE" | "FOR RENT";
@@ -40,11 +46,17 @@ export const properties: Property[] = [
     id: 1,
     title: "Prime Residential Land in Colombo 07",
     location: "Colombo 07, Sri Lanka",
-    virtualTourUrl: "https://my.matterport.com/show/?m=jm5WwEA3HUN&amp=",
+    virtualTourUrl: "https://www.google.com/maps/embed?pb=!4v1771240449012!6m8!1m7!1scTTQBVee74T2KpsRULOMpA!2m2!1d6.9062950018613!2d79.92752460354632!3f27.37124281642751!4f-14.134596299137641!5f0.7820865974627469",
     embedUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.1234567890123!2d79.86123456789012!3d6.927123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2591234567890%3A0xabcdef1234567890!2sColombo%2007%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1690000000000",
     price: "LKR 85,000,000",
     priceValue: 85000000,
+  blueprint: {
+  title: "Land Blueprint",
+  fileUrl: "https://res.cloudinary.com/dyvixdh7n/image/upload/v1771304975/blue-print_vbndsq.jpg",
+  fileName: "colombo-07-land-blueprintf",
+  fileType: "image",
+},
     type: "FOR SALE",
     category: "Sale",
     landType: "Residential",
@@ -68,7 +80,7 @@ export const properties: Property[] = [
       image:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80",
       phone: "+94 77 123 4567",
-      email: "kamal@homenest.lk",
+      email: "kamal@agroproperty.lk",
     },
     postedDate: "2 days ago",
   
@@ -157,7 +169,7 @@ export const properties: Property[] = [
       image:
         "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
       phone: "+94 71 234 5678",
-      email: "nisha@homenest.lk",
+      email: "nisha@agroproperty.lk",
     },
     postedDate: "5 days ago",
      // ✅ matches Statistics({ stats })
@@ -247,7 +259,7 @@ export const properties: Property[] = [
       image:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
       phone: "+94 76 345 6789",
-      email: "ruwan@homenest.lk",
+      email: "ruwan@agroproperty.lk",
     },
     postedDate: "1 week ago",
      // ✅ matches Statistics({ stats })
@@ -337,7 +349,7 @@ export const properties: Property[] = [
       image:
         "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
       phone: "+94 77 987 6543",
-      email: "dinesh@homenest.lk",
+      email: "dinesh@agroproperty.lk",
     },
     postedDate: "2 weeks ago",
      // ✅ matches Statistics({ stats })
@@ -427,7 +439,7 @@ export const properties: Property[] = [
       image:
         "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
       phone: "+94 71 876 5432",
-      email: "amanda@homenest.lk",
+      email: "amanda@agroproperty.lk",
     },
     postedDate: "3 days ago",
      // ✅ matches Statistics({ stats })
@@ -517,7 +529,7 @@ export const properties: Property[] = [
       image:
         "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80",
       phone: "+94 77 555 1234",
-      email: "suresh@homenest.lk",
+      email: "suresh@agroproperty.lk",
     },
     postedDate: "1 day ago",
      // ✅ matches Statistics({ stats })

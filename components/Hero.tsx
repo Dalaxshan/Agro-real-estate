@@ -7,12 +7,9 @@ import {
   Star,
   ChevronDown
 } from "lucide-react";
-import { useState } from "react";
+
 
 export const Hero = () => {
-  const [activeTab, setActiveTab] = useState("Buy");
-
-  const tabs = ["Buy", "Rent", "New Projects"];
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20">
@@ -40,7 +37,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-40 right-32 hidden xl:block floating" style={{ animationDelay: "1.5s" }}>
+      <div className="absolute bottom-20 right-32 hidden xl:block floating" style={{ animationDelay: "1.5s" }}>
         <div className="glass rounded-2xl p-4 text-white">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
@@ -62,16 +59,16 @@ export const Hero = () => {
           </div>
           <h1 className="font-playfair text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
             Find Your <br />
-            <span className="text-accent">Perfect</span> Home
+            <span className="text-accent">Perfect</span> Land & Property
           </h1>
           <p className="text-xl text-white/80 mb-10 max-w-xl leading-relaxed">
-            Discover premium properties across Sri Lanka. From luxury villas to modern apartments, your dream home is just a search away.
+           Trusted real estate solutions with verified properties, bank loan assistance, and legal support.
           </p>
 
           {/* Search Box */}
-          <div className="bg-white rounded-2xl p-3 shadow-2xl shadow-black/20 max-w-4xl">
+          <div className="glass p-2 shadow-2xl shadow-black/20 max-w-4xl">
             {/* Search Tabs */}
-            <div className="flex gap-1 mb-3 px-2 pt-2">
+            {/* <div className="flex gap-1 mb-3 px-2 pt-2">
               {tabs.map((tab) => (
                 <button
                   key={tab}
@@ -83,18 +80,18 @@ export const Hero = () => {
                   {tab}
                 </button>
               ))}
-            </div>
+            </div> */}
             <div className="flex flex-col md:flex-row gap-3 p-2">
               <div className="flex-1 relative">
                 <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-primary-500 w-5 h-5" />
                 <input 
                   type="text" 
                   placeholder="City, Neighborhood or ZIP" 
-                  className="w-full pl-11 pr-4 py-3.5 bg-gray-50 rounded-xl border border-gray-200 focus:border-primary-500 outline-none transition text-gray-700"
+                  className="w-full pl-11 pr-4 py-3.5 bg-gray-50 border border-gray-200 focus:border-primary-500 outline-none transition text-gray-700"
                 />
               </div>
               <div className="md:w-48 relative">
-                <select className="w-full px-4 py-3.5 bg-gray-50 rounded-xl border border-gray-200 focus:border-primary-500 outline-none transition text-gray-700 appearance-none cursor-pointer">
+                <select className="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 focus:border-primary-500 outline-none transition text-gray-700 appearance-none cursor-pointer">
                   <option>Property Type</option>
                   <option>House</option>
                   <option>Apartment</option>
@@ -103,7 +100,7 @@ export const Hero = () => {
                 <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
               </div>
               <div className="md:w-48 relative">
-                <select className="w-full px-4 py-3.5 bg-gray-50 rounded-xl border border-gray-200 focus:border-primary-500 outline-none transition text-gray-700 appearance-none cursor-pointer">
+                <select className="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 focus:border-primary-500 outline-none transition text-gray-700 appearance-none cursor-pointer">
                   <option>Price Range</option>
                   <option>Under 10M</option>
                   <option>10M - 50M</option>
@@ -111,7 +108,7 @@ export const Hero = () => {
                 </select>
                 <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
               </div>
-              <button className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-3.5 rounded-xl font-semibold transition-all shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 flex items-center justify-center gap-2">
+              <button className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-3.5 font-semibold transition-all shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 flex items-center justify-center gap-2">
                 <Search className="w-5 h-5" />
                 <span>Search</span>
               </button>

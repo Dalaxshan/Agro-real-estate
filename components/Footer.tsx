@@ -88,7 +88,7 @@ export const Footer = () => {
                 <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
                   <Mail className="text-accent w-5 h-5" />
                 </div>
-                <a href="mailto:info@homenest.lk" className="text-gray-400 hover:text-accent transition">info@homenest.lk</a>
+                <a href="mailto:info@agroproperty.lk" className="text-gray-400 hover:text-accent transition">info@agroproperty.lk</a>
               </li>
             </ul>
 
@@ -112,7 +112,7 @@ export const Footer = () => {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 text-sm flex items-center gap-1">
-              © 2024 HomeNest. All rights reserved. Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> in Sri Lanka
+              © 2024 Agro Property. All rights reserved. Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> in Sri Lanka
             </p>
             <div className="flex gap-6">
               <a href="#" className="text-gray-500 hover:text-accent text-sm transition">Privacy Policy</a>

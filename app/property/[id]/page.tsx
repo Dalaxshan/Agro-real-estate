@@ -19,6 +19,8 @@ import {
   PropertyReviews,
   Statistics,
   VirtualTour,
+  GoogleMapView,
+  LandBlueprint
 } from "@/components/Features";
 
 export default async function PropertyDetailsPage({
@@ -183,6 +185,9 @@ export default async function PropertyDetailsPage({
               </div>
             </div>
 
+            {/* Land blue print */}
+            <LandBlueprint blueprint={property.blueprint} />
+
             {/* Description */}
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
               <h3 className="font-playfair text-2xl font-bold text-dark mb-4">
@@ -210,28 +215,8 @@ export default async function PropertyDetailsPage({
                 ))}
               </div>
             </div>
-
-            {/* Map Placeholder */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-              <h3 className="font-playfair text-2xl font-bold text-dark mb-6">
-                Location
-              </h3>
-
-              <div className="rounded-xl overflow-hidden h-80 border">
-                <iframe
-                  src={property.embedUrl}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  allowFullScreen
-                ></iframe>
-              </div>
-
-            </div>
-
             {/*other features like virtual tour, statistics etc can be added here in the future*/}
+            <GoogleMapView url={property.embedUrl} />
             <VirtualTour url={virtualTourUrl} />
             <Statistics stats={statistics} />
             <MortgageCalculator price={property.priceValue} />
