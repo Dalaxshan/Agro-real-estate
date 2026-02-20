@@ -17,7 +17,7 @@ import {
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
-export const Navbar = () => {
+export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
