@@ -68,10 +68,12 @@ export const PropertyCard = ({ prop }: PropertyCardProps) => {
           )}
         </div>
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img
+          <div className="flex items-center gap-3"> 
+            <Image
               src={prop.agent.image}
               alt={prop.agent.name}
+              width={36}
+              height={36}
               className="w-9 h-9 rounded-full object-cover"
             />
             <div>
@@ -80,7 +82,7 @@ export const PropertyCard = ({ prop }: PropertyCardProps) => {
             </div>
           </div>
           <Link
-            href={`/property/${prop.id}`}
+            href={`/properties/${prop.id}`}
             className="text-blue-500 hover:text-blue-600 font-semibold text-sm flex items-center gap-1"
           >
             Details <ArrowRight className="w-4 h-4" />

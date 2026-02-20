@@ -46,7 +46,7 @@ export const Categories = () => {
   const router = useRouter();
 
   const handleCategoryClick = (categoryName: string) => {
-  router.push(`/property?category=${categoryName.toLowerCase()}`);
+  router.push(`/properties?category=${categoryName.toLowerCase()}`);
   };
 
   return (

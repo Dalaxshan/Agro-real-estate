@@ -68,7 +68,7 @@ export const Navbar = () => {
       {/* Main Nav */}
       <nav 
         className={cn(
-          "fixed w-full z-50 transition-all duration-500 py-4 top-0 md:top-9",
+          "fixed w-full z-50 transition-all duration-500 py-2 top-0 md:top-9",
           isScrolled ? "nav-scrolled !top-0" : "bg-transparent md:bg-transparent"
         )}
       >
@@ -77,20 +77,12 @@ export const Navbar = () => {
             {/* <div className="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform">
               <Home className="text-white w-6 h-6" />
             </div> */}
-            {/* <img 
-              src="/logo-rm-bg.png" 
+           
+               <img 
+              src="/logo.png" 
               alt="Agro Property Logo" 
-              className="w-35 h-22 object-cover rounded-xl group-hover:rotate-12 transition-transform"
-            /> */}
-
-            <Image 
-              src="/logo-rm-bg.png"
-              alt="Logo"
-              width={110}
-              height={40}
-              className="object-cover rounded-xl group-hover:rotate-12 transition-transform"
-            />
-          
+              className="w-45 h-15 object-cover rounded-xl group-hover:rotate-12 transition-transform"
+            /> 
           </a>
 
           {/* Desktop Menu */}

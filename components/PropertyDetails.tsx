@@ -57,8 +57,6 @@ export default async function PropertyDetails({
 
   return (
     <main className="min-h-screen bg-gray-50">
-      <Navbar />
-
       {/* Spacer for fixed navbar */}
       <div className="h-24 bg-dark"></div>
 

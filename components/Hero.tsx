@@ -1,6 +1,7 @@
 "use client";
 
 import { Search, MapPin, Check, Star, ChevronDown } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 export const Hero = () => {
@@ -12,9 +13,11 @@ export const Hero = () => {
       className="relative min-h-screen flex items-center pt-20"
     >
       <div className="absolute inset-0">
-        <img
+        <Image 
           src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80"
           alt="Luxury Home"
+          width={1920}
+          height={1080}
           className="w-full h-full object-cover"
         />
         <div className="hero-gradient absolute inset-0"></div>

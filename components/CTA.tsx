@@ -1,10 +1,14 @@
+import Image from "next/image";
+
 export const CTA = () => {
   return (
     <section className="py-20 relative overflow-hidden">
       <div className="absolute inset-0">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80"
           alt="Background"
+          width={1920}
+          height={1080}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary-700/95 to-primary-500/90"></div>
@@ -14,10 +18,10 @@ export const CTA = () => {
           <div>
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
               Ready to Find Your <br />
-              Dream Home?
+              Perfect Land?
             </h2>
             <p className="text-white/80 text-lg mb-8 leading-relaxed">
-              Let our expert team help you navigate the real estate market.
+              Let our expert team help you navigate the land real estate market.
               Whether you&apos;re buying, selling, or renting — we&apos;ve got
               you covered.
             </p>
