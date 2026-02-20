@@ -15,6 +15,7 @@ import {
   X,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,11 +30,11 @@ export const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Properties", href: "#properties" },
-    { name: "Projects", href: "#projects" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "home" },
+    { name: "Properties", href: "properties" },
+    { name: "Projects", href: "projects" },
+    { name: "About", href: "about" },
+    { name: "Contact", href: "contact" },
   ];
 
   return (
@@ -48,7 +49,7 @@ export const Navbar = () => {
             </span>
             <span className="flex items-center gap-2">
               <Mail className="w-3 h-3 text-accent" />
-              info@homenest.lk
+              info@agroproperty.lk
             </span>
             <span className="flex items-center gap-2">
               <Clock className="w-3 h-3 text-accent" />
@@ -67,21 +68,21 @@ export const Navbar = () => {
       {/* Main Nav */}
       <nav 
         className={cn(
-          "fixed w-full z-50 transition-all duration-500 py-4 top-0 md:top-9",
+          "fixed w-full z-50 transition-all duration-500 py-2 top-0 md:top-9",
           isScrolled ? "nav-scrolled !top-0" : "bg-transparent md:bg-transparent"
         )}
       >
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform">
+          <a href="/home" className="flex items-center gap-3 group">
+            {/* <div className="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform">
               <Home className="text-white w-6 h-6" />
-            </div>
-            <span className={cn(
-              "logo-text text-2xl font-bold transition-colors",
-              isScrolled ? "text-dark" : "text-white"
-            )}>
-              Home<span className="text-accent">Nest</span>
-            </span>
+            </div> */}
+           
+               <img 
+              src="/logo.png" 
+              alt="Agro Property Logo" 
+              className="w-45 h-15 object-cover rounded-xl group-hover:rotate-12 transition-transform"
+            /> 
           </a>
 
           {/* Desktop Menu */}

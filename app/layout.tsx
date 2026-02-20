@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,8 +15,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "HomeNest | Find Your Dream Home",
-  description: "Sri Lanka's premier real estate platform. Discover premium properties across Sri Lanka.",
+  title: "Agro property | Find Your Dream Land in Sri Lanka",
+  description:
+    "Sri Lanka's premier real estate platform. Discover premium properties across Sri Lanka.",
 };
 
 export default function RootLayout({
@@ -24,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+      <Navbar />
       <body className="font-inter antialiased">{children}</body>
+      <Footer />
     </html>
   );
 }
