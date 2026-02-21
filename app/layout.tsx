@@ -16,7 +16,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Agro property | Find Your Dream Land in Sri Lanka",
+  title: "Tranquille Real Estate | Find Your Dream Land in Sri Lanka",
   description:
     "Sri Lanka's premier real estate platform. Discover premium properties across Sri Lanka.",
 };

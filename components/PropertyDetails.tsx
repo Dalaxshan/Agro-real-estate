@@ -1,5 +1,3 @@
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 import { FloatingActions } from "@/components/FloatingActions";
 import {
   MapPin,
@@ -285,8 +283,6 @@ export default async function PropertyDetails({
           </div>
         </div>
       </div>
-
-      <Footer />
       <FloatingActions />
     </main>
   );

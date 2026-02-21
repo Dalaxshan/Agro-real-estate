@@ -26,8 +26,8 @@ export default function Footer() {
 
               <img
                 src="/logo.png"
-                alt="Agro Property Logo"
-                className="w-55 h-15 object-cover rounded-xl group-hover:rotate-12 transition-transform"
+                alt="Tranquille Real Estate Logo"
+                className="w-30 h-25 object-cover rounded-xl group-hover:rotate-12 transition-transform"
               />
             </a>
             <p className="text-gray-400 leading-relaxed mb-6">
@@ -160,10 +160,10 @@ export default function Footer() {
         </div>
 
         {/* Bottom Footer */}
-        <div className="border-t border-white/10 pt-8">
+        <div className="border-t border-white/10 pt-0">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-300 text-sm flex items-center gap-1">
-              © 2024 Agro Property. All rights reserved. Made with{" "}
+              © 2026 Tranquille Real Estate. All rights reserved. Made with{" "}
               <Heart className="w-4 h-4 text-red-500 fill-red-500" /> in Sri
               Lanka
             </p>

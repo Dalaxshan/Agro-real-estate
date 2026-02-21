@@ -145,10 +145,10 @@ export default function PropertiesPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
             <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-primary-100 text-sm font-medium mb-6">
-              🏠 Discover Your Dream Property
+              🏠 Your Perfect Property Awaits
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Find Your Perfect{" "}
+            Discover Your Ideal{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-emerald-400">
                 Property
               </span>
