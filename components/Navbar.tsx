@@ -16,8 +16,9 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
 
-export const Navbar = () => {
+export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -30,11 +31,11 @@ export const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "home" },
-    { name: "Properties", href: "properties" },
-    { name: "Projects", href: "projects" },
-    { name: "About", href: "about" },
-    { name: "Contact", href: "contact" },
+    { name: "Home", href: "/" },
+    { name: "Properties", href: "/properties" },
+    { name: "Projects", href: "/projects" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -73,17 +74,33 @@ export const Navbar = () => {
         )}
       >
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <a href="/home" className="flex items-center gap-3 group">
+      
+          {isScrolled ? (
+            <a href="" className="flex items-center gap-3 group">
+              {/* <div className="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform">
+              <Home className="text-white w-6 h-6" />
+            </div> */}
+           
+              <img
+                src="/logo-black.png"
+                alt="Tranquille Real Estate Logo"
+                className="w-20 h-15 object-cover rounded-xl group-hover:rotate-12 transition-transform"
+              />
+            </a>
+          ):(
+             <a href="" className="flex items-center gap-3 group">
             {/* <div className="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform">
               <Home className="text-white w-6 h-6" />
             </div> */}
            
                <img 
               src="/logo.png" 
-              alt="Agro Property Logo" 
-              className="w-45 h-15 object-cover rounded-xl group-hover:rotate-12 transition-transform"
+              alt="Tranquille Real Estate Logo"
+              className="w-20 h-15 object-cover rounded-xl group-hover:rotate-12 transition-transform"
             /> 
           </a>
+          )
+          }
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-8">
@@ -108,9 +125,9 @@ export const Navbar = () => {
             )}>
               <Heart className="w-4 h-4" /> Saved
             </a>
-            <button className="bg-accent hover:bg-amber-600 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50">
+            <Link href="/properties" className="bg-accent hover:bg-amber-600 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50">
               List Property
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -136,9 +153,9 @@ export const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <button className="bg-accent text-white text-center px-6 py-3 rounded-full font-semibold mt-2">
+              <Link href="/properties" className="bg-accent text-white text-center px-6 py-3 rounded-full font-semibold mt-2">
                 List Property
-              </button>
+              </Link>
             </div>
           </div>
         )}

@@ -1,7 +1,8 @@
 "use client";
 
-import { Search, MapPin, Check, Star, ChevronDown } from "lucide-react";
+import { Search, Check, Star } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export const Hero = () => {
@@ -84,9 +85,9 @@ export const Hero = () => {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-14 pr-32 py-5 glass backdrop-blur-sm rounded-1xl border border-white/30 focus:outline-none focus:ring-2 focus:ring-primary-400 text-slate-100 placeholder-slate-200 shadow-xl"
               />
-              <button className="absolute right-3 px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-1xl hover:from-primary-600 hover:to-primary-700 transition-all shadow-lg shadow-primary-500/30">
+              <Link href={`/properties/?search=${searchQuery}`} className="absolute right-3 px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-1xl hover:from-primary-600 hover:to-primary-700 transition-all shadow-lg shadow-primary-500/30">
                 Search
-              </button>
+              </Link>
             </div>
           </div>
 

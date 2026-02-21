@@ -2,6 +2,8 @@ export interface Property {
   id: number;
   title: string;
   location: string;
+  lat: number;
+  lng: number;
   embedUrl: string;
   virtualTourUrl?: string;
   bedrooms?: number;
@@ -60,6 +62,8 @@ export const properties: Property[] = [
     id: 1,
     title: "Prime Residential Land in Colombo 07",
     location: "Colombo 07, Sri Lanka",
+    lat: 6.916621288085356,
+    lng: 79.97293566373716,
     city: "Colombo",
     bedrooms: 4,
     virtualTourUrl:
@@ -156,8 +160,10 @@ export const properties: Property[] = [
     id: 2,
     title: "Commercial Land Facing High Level Road",
     location: "Rajagiriya, Sri Lanka",
+    lat: 6.872845614038111,
+    lng: 79.88306730333007,
     city: "Rajagiriya",
-      bedrooms: 4,
+    bedrooms: 4,
     embedUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3161.567890123456!2d79.87654321098765!3d6.894567890123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae258b1234567890%3A0xabcdef1234567890!2sRajagiriya%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1690000000000",
     price: "LKR 250,000",
@@ -242,8 +248,10 @@ export const properties: Property[] = [
     id: 3,
     title: "Scenic Land with Paddy Field View",
     location: "Nugegoda, Sri Lanka",
+    lat: 6.835218143833975,
+    lng: 80.47719514070442,
     city: "Nugegoda",
-      bedrooms: 4,
+    bedrooms: 4,
     embedUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3161.567890123456!2d79.87654321098765!3d6.894567890123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae258b1234567890%3A0xabcdef1234567890!2sRajagiriya%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1690000000000",
     price: "LKR 45,000,000",
@@ -328,8 +336,10 @@ export const properties: Property[] = [
     id: 4,
     title: "Coconut & Cinnamon Estate for Sale",
     location: "Kurunegala, Sri Lanka",
+    lat: 8.971754757943856,
+    lng: 80.52150209811157,
     city: "Kurunegala",
-      bedrooms: 4,  
+    bedrooms: 4,
     embedUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3161.567890123456!2d79.87654321098765!3d6.894567890123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae258b1234567890%3A0xabcdef1234567890!2sRajagiriya%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1690000000000",
     price: "LKR 120,000,000",
@@ -414,8 +424,10 @@ export const properties: Property[] = [
     id: 5,
     title: "Beachfront Land for Tourism Project",
     location: "Galle, Sri Lanka",
+    lat: 6.4727055359142796,
+    lng: 81.50011837853287,
     city: "Galle",
-      bedrooms: 4,
+    bedrooms: 4,
     embedUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3161.567890123456!2d79.87654321098765!3d6.894567890123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae258b1234567890%3A0xabcdef1234567890!2sRajagiriya%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1690000000000",
     price: "LKR 250,000,000",
@@ -500,8 +512,10 @@ export const properties: Property[] = [
     id: 6,
     title: "Bare Land for Warehouse",
     location: "Wattala, Sri Lanka",
+    lat: 6.907800255539025,
+    lng: 79.9307889684019,
     city: "Wattala",
-      bedrooms: 4,
+    bedrooms: 4,
     embedUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3161.567890123456!2d79.87654321098765!3d6.894567890123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae258b1234567890%3A0xabcdef1234567890!2sRajagiriya%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1690000000000",
     price: "LKR 180,000",
@@ -514,7 +528,7 @@ export const properties: Property[] = [
       "Flat bare land available for rent in Wattala. Suitable for storage or warehouse purposes. Container access available. Secure perimeter wall and gate.",
     images: [
       "https://images.unsplash.com/photo-1565183928294-7063f23ce0f8?w=800&q=80",
-       "https://images.unsplash.com/photo-1582268611958-ebfd161ef230?w=800&q=80",
+      "https://images.unsplash.com/photo-1582268611958-ebfd161ef230?w=800&q=80",
     ],
     features: [
       "Container Access",

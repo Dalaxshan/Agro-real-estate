@@ -28,6 +28,7 @@ import {
   Property,
 } from "@/data/properties"; // Adjust the import path as needed
 import { PropertyCard } from "./propertyCard";
+import { useSearchParams } from "next/navigation";
 
 // Category icons mapping
 const categoryIcons: Record<string, React.ReactNode> = {
@@ -42,7 +43,7 @@ const categoryIcons: Record<string, React.ReactNode> = {
 
 export default function PropertiesPage() {
   // Filter states
-  const [searchQuery, setSearchQuery] = useState("");
+  // const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedType, setSelectedType] = useState("All");
   const [selectedCity, setSelectedCity] = useState("All");
@@ -50,13 +51,20 @@ export default function PropertiesPage() {
   const [maxPrice, setMaxPrice] = useState("");
   const [showMobileFilters, setShowMobileFilters] = useState(false);
 
+  //search query from URL
+  const searchParams = useSearchParams();
+  
+  const initialSearch = searchParams.get("search") || "";
+
+  console.log('Search:', initialSearch);
+
   // Filter properties based on all criteria
   const filteredProperties = useMemo(() => {
     return properties.filter((property) => {
       // Search filter
-      const searchLower = searchQuery.toLowerCase();
+      const searchLower = initialSearch.toLowerCase();
       const matchesSearch =
-        searchQuery === "" ||
+        searchLower === "" ||
         property.title.toLowerCase().includes(searchLower) ||
         property.location.toLowerCase().includes(searchLower) ||
         property.description.toLowerCase().includes(searchLower);
@@ -89,7 +97,7 @@ export default function PropertiesPage() {
       );
     });
   }, [
-    searchQuery,
+    initialSearch,
     selectedCategory,
     selectedType,
     selectedCity,
@@ -99,7 +107,7 @@ export default function PropertiesPage() {
 
   // Clear all filters
   const clearFilters = () => {
-    setSearchQuery("");
+    // setSearchQuery("");
     setSelectedCategory("All");
     setSelectedType("All");
     setSelectedCity("All");
@@ -109,7 +117,7 @@ export default function PropertiesPage() {
 
   // Check if any filter is active
   const hasActiveFilters =
-    searchQuery !== "" ||
+    initialSearch !== "" ||
     selectedCategory !== "All" ||
     selectedType !== "All" ||
     selectedCity !== "All" ||
@@ -137,10 +145,10 @@ export default function PropertiesPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
             <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-primary-100 text-sm font-medium mb-6">
-              🏠 Discover Your Dream Property
+              🏠 Your Perfect Property Awaits
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Find Your Perfect{" "}
+            Discover Your Ideal{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-emerald-400">
                 Property
               </span>
@@ -149,24 +157,6 @@ export default function PropertiesPage() {
               Explore our exclusive collection of premium properties across Sri
               Lanka. From luxury villas to commercial spaces.
             </p>
-
-            {/* Search Bar */}
-            <div className="relative max-w-2xl mx-auto">
-              <div className="absolute inset-0 bg-white/20 backdrop-blur-xl rounded-2xl" />
-              <div className="relative flex items-center">
-                <Search className="absolute left-5 w-5 h-5 text-slate-400" />
-                <input
-                  type="text"
-                  placeholder="Search by location, title, or keywords..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-14 pr-32 py-5 glass backdrop-blur-sm rounded-2xl border border-white/30 focus:outline-none focus:ring-2 focus:ring-primary-400 text-slate-700 placeholder-slate-400 shadow-xl"
-                />
-                <button className="absolute right-3 px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-xl hover:from-primary-600 hover:to-primary-700 transition-all shadow-lg shadow-primary-500/30">
-                  Search
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -444,18 +434,7 @@ export default function PropertiesPage() {
 
             {/* Active Filters Pills */}
             {hasActiveFilters && (
-              <div className="flex flex-wrap gap-2 mb-6">
-                {searchQuery && (
-                  <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 text-primary-600 rounded-full text-sm font-medium">
-                    Search: {searchQuery}
-                    <button
-                      onClick={() => setSearchQuery("")}
-                      className="hover:bg-primary-100 rounded-full p-0.5"
-                    >
-                      <X className="w-4 h-4" />
-                    </button>
-                  </span>
-                )}
+              <div className="flex flex-wrap gap-2 mb-6"> 
                 {selectedCategory !== "All" && (
                   <span className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-600 rounded-full text-sm font-medium">
                     {selectedCategory}

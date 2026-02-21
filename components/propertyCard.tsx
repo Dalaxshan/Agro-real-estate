@@ -82,7 +82,7 @@ export const PropertyCard = ({ prop }: PropertyCardProps) => {
             </div>
           </div>
           <Link
-            href={`/properties/${prop.id}`}
+            href={`./properties/${prop.id}`}
             className="text-blue-500 hover:text-blue-600 font-semibold text-sm flex items-center gap-1"
           >
             Details <ArrowRight className="w-4 h-4" />
