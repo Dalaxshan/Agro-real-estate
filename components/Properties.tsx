@@ -1,11 +1,12 @@
 "use client";
 
-    import { Heart, MapPin, Square, ArrowRight, Trees } from "lucide-react";
+    import { ArrowRight} from "lucide-react";
 import { useState } from "react";
 
 import Link from "next/link";
 import { properties } from "@/data/properties";
-import { PropertyCard } from "./propertyCard";
+import { PropertyCard } from "./PropertyCard";
+
 
 export const Properties = () => {
   const [filter, setFilter] = useState("All");
