@@ -48,8 +48,6 @@ export default function PropertyList() {
   
   const initialSearch = searchParams.get("search") || "";
 
-  console.log('Search:', initialSearch);
-
   // Filter properties based on all criteria
   const filteredProperties = useMemo(() => {
     return properties.filter((property) => {

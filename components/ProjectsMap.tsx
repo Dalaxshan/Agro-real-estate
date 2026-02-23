@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
 import * as L from "leaflet";
 import { properties, type Property } from "@/data/properties";
@@ -92,13 +92,11 @@ function PropertyCard({
 
         {/* Image */}
         <div className="relative h-48 overflow-hidden">
-          <Image 
-            src={property.images[0]}
-            alt={property.title}
-            width={300}
-            height={192}
-            className="absolute inset-0 object-cover"
-          />
+          <Image
+            src={property.images[1]}
+            alt={`${property.title} additional`}
+            className="absolute top-2 left-2 h-16 w-16 object-cover rounded-lg border-2 border-white shadow-md"
+            />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
 
           {/* Type badge */}
@@ -199,7 +197,7 @@ function PropertyCard({
   );
 }
 
-export default function ProjectsMap() {
+export function ProjectsMap() {
   const [activeProject, setActiveProject] = useState<Property | null>(null);
 
   const center: [number, number] = [7.8731, 80.7718];
