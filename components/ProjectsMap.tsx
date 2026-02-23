@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState,useEffect } from "react";
 import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
 import * as L from "leaflet";
 import { properties, type Property } from "@/data/properties";
 import "leaflet/dist/leaflet.css";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 // Custom marker icon
 function createCustomIcon(isActive: boolean) {
@@ -91,10 +92,12 @@ function PropertyCard({
 
         {/* Image */}
         <div className="relative h-48 overflow-hidden">
-          <img
+          <Image 
             src={property.images[0]}
             alt={property.title}
-            className="h-full w-full object-cover"
+            width={300}
+            height={192}
+            className="absolute inset-0 object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
 
@@ -196,7 +199,7 @@ function PropertyCard({
   );
 }
 
-export function ProjectsMap() {
+export default function ProjectsMap() {
   const [activeProject, setActiveProject] = useState<Property | null>(null);
 
   const center: [number, number] = [7.8731, 80.7718];

@@ -1,21 +1,14 @@
-// app/properties/page.tsx
-"use client";
+'use client';
 
 import React, { useState, useMemo } from "react";
-import Link from "next/link";
 import {
   Search,
   MapPin,
-  Heart,
-  ArrowRight,
-  Trees,
-  Square,
   SlidersHorizontal,
   X,
   ChevronDown,
   Home,
   Building2,
-  Landmark,
   TreePine,
   Building,
   Castle,
@@ -25,9 +18,8 @@ import {
   cities,
   categories,
   propertyTypes,
-  Property,
-} from "@/data/properties"; // Adjust the import path as needed
-import { PropertyCard } from "./propertyCard";
+} from "@/data/properties"; 
+import { PropertyCard } from "./PropertyCard";
 import { useSearchParams } from "next/navigation";
 
 // Category icons mapping
@@ -41,7 +33,7 @@ const categoryIcons: Record<string, React.ReactNode> = {
   Villas: <Castle className="w-4 h-4" />,
 };
 
-export default function PropertiesPage() {
+export default function PropertyList() {
   // Filter states
   // const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
