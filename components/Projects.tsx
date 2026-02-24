@@ -1,4 +1,5 @@
 import { MapPin, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const projects = [
   { title: "Skyline Towers", loc: "Colombo 02", price: "25M", prog: 65, img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80", tag: "UPCOMING", tagColor: "bg-accent" },
@@ -18,7 +19,14 @@ export const Projects = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((proj, i) => (
             <div key={i} className="card-hover group relative rounded-3xl overflow-hidden h-96">
-              <img src={proj.img} alt={proj.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              {/* <img src={proj.img} alt={proj.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" /> */}
+              <Image
+                src={proj.img} 
+                alt={proj.title}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                width={800}
+                height={600}
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
               <div className="absolute top-4 left-4">
                 <span className={`${proj.tagColor} text-white text-xs font-bold px-3 py-1.5 rounded-full`}>

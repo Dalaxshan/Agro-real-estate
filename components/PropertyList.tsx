@@ -35,13 +35,13 @@ const categoryIcons: Record<string, React.ReactNode> = {
 
 export default function PropertyList() {
   // Filter states
-  // const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedType, setSelectedType] = useState("All");
   const [selectedCity, setSelectedCity] = useState("All");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [showMobileFilters, setShowMobileFilters] = useState(false);
+  const [sortBy, setSortBy] = useState("newest");
 
   //search query from URL
   const searchParams = useSearchParams();
@@ -95,6 +95,22 @@ export default function PropertyList() {
     maxPrice,
   ]);
 
+  // Sort filtered properties
+  const sortedProperties = useMemo(() => {
+    const sorted = [...filteredProperties];
+    
+    switch (sortBy) {
+      case "price-low":
+        return sorted.sort((a, b) => a.priceValue - b.priceValue);
+      case "price-high":
+        return sorted.sort((a, b) => b.priceValue - a.priceValue);
+      case "newest":
+      default:
+        // Reverse order for newest first (higher id = newer)
+        return sorted.sort((a, b) => b.id - a.id);
+    }
+  }, [filteredProperties, sortBy]);
+
   // Clear all filters
   const clearFilters = () => {
     // setSearchQuery("");
@@ -103,6 +119,7 @@ export default function PropertyList() {
     setSelectedCity("All");
     setMinPrice("");
     setMaxPrice("");
+    setSortBy("newest");
   };
 
   // Check if any filter is active
@@ -412,11 +429,15 @@ export default function PropertyList() {
               {/* Sort Dropdown */}
               <div className="relative">
                 <div className="absolute inset-0 bg-white/70 backdrop-blur-xl rounded-xl" />
-                <select className="relative px-4 py-3 pr-10 bg-transparent rounded-xl border border-slate-200/80 focus:outline-none focus:ring-2 focus:ring-primary-400 text-slate-700 appearance-none cursor-pointer min-w-[180px]">
-                  <option>Sort by: Newest</option>
-                  <option>Price: Low to High</option>
-                  <option>Price: High to Low</option>
-                  <option>Most Popular</option>
+                <select 
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="relative px-4 py-3 pr-10 bg-transparent rounded-xl border border-slate-200/80 focus:outline-none focus:ring-2 focus:ring-primary-400 text-slate-700 appearance-none cursor-pointer min-w-[180px]"
+                >
+                  <option value="newest">Sort by: Newest</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="popular">Most Popular</option>
                 </select>
                 <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" />
               </div>
@@ -476,9 +497,9 @@ export default function PropertyList() {
             )}
 
             {/* Property Grid */}
-            {filteredProperties.length > 0 ? (
+            {sortedProperties.length > 0 ? (
               <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-                {filteredProperties.map((prop) => (
+                {sortedProperties.map((prop) => (
                   <PropertyCard key={prop.id} prop={prop} />
                 ))}
               </div>
@@ -504,7 +525,7 @@ export default function PropertyList() {
             )}
 
             {/* Pagination */}
-            {filteredProperties.length > 0 && (
+            {sortedProperties.length > 0 && (
               <div className="mt-12 flex justify-center">
                 <div className="inline-flex items-center gap-2 bg-white/70 backdrop-blur-xl rounded-2xl p-2 border border-slate-200/80">
                   <button className="px-4 py-2 rounded-xl text-slate-600 hover:bg-slate-100 transition">

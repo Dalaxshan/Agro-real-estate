@@ -75,7 +75,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
       
           {isScrolled ? (
-            <a href="" className="flex items-center gap-3 group">
+            <Link href="/" className="flex items-center gap-3 group">
               {/* <div className="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform">
               <Home className="text-white w-6 h-6" />
             </div> */}
@@ -85,9 +85,9 @@ export default function Navbar() {
                 alt="Tranquille Real Estate Logo"
                 className="w-20 h-15 object-cover rounded-xl group-hover:rotate-12 transition-transform"
               />
-            </a>
+            </Link>
           ):(
-             <a href="" className="flex items-center gap-3 group">
+             <Link href="/" className="flex items-center gap-3 group">
             {/* <div className="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform">
               <Home className="text-white w-6 h-6" />
             </div> */}
@@ -97,7 +97,7 @@ export default function Navbar() {
               alt="Tranquille Real Estate Logo"
               className="w-20 h-15 object-cover rounded-xl group-hover:rotate-12 transition-transform"
             /> 
-          </a>
+          </Link>
           )
           }
 
