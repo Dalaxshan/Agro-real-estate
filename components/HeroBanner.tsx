@@ -1,8 +1,9 @@
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 export default function HeroBanner() {
   return (
-    <section className="relative h-[420px] md:h-[500px] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[420px] md:h-[400px] flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -33,9 +34,9 @@ export default function HeroBanner() {
         </p>
         {/* Breadcrumb */}
         <nav className="flex items-center justify-center gap-2 text-sm text-white/60">
-          <a href="" className="hover:text-[#c8956c] transition">
+          <Link href="/" className="hover:text-[#c8956c] transition">
             Home
-          </a>
+          </Link>
           <ChevronRight size={14} />
           <span className="text-[#c8956c]">About Us</span>
         </nav>

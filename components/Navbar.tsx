@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { 
-  Home, 
   Phone, 
   Mail, 
   Clock, 
@@ -15,7 +14,6 @@ import {
   X,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -34,8 +32,9 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "Properties", href: "/properties" },
     { name: "Projects", href: "/projects" },
-    { name: "AboutUs", href: "/aboutUs" },
-    { name: "ContactUs", href: "/contactUs" },
+    { name: "About Us", href: "/about-us" },
+     { name: "Branches", href: "/branches" },
+    { name: "Blogs", href: "/blogs" },
   ];
 
   return (
