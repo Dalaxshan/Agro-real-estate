@@ -19,7 +19,7 @@ export default function BlogCard({ blog, featured = false }: BlogCardProps) {
 
   if (featured) {
     return (
-      <Link href={`/blog/${blog.slug}`} className="group block">
+      <Link href={`/blogs/${blog.slug}`} className="group block">
         <article className="grid md:grid-cols-2 gap-8 bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100 hover:shadow-xl transition-all duration-500">
           {/* Image */}
           <div className="relative h-72 md:h-full min-h-[320px] overflow-hidden">

@@ -14,7 +14,7 @@ export const Hero = () => {
       className="relative min-h-screen flex items-center pt-20"
     >
       <div className="absolute inset-0">
-        <Image 
+        <Image
           src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80"
           alt="Luxury Home"
           width={1920}
@@ -85,7 +85,10 @@ export const Hero = () => {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-14 pr-32 py-5 glass backdrop-blur-sm rounded-1xl border border-white/30 focus:outline-none focus:ring-2 focus:ring-primary-400 text-slate-100 placeholder-slate-200 shadow-xl"
               />
-              <Link href={`/properties/?search=${searchQuery}`} className="absolute right-3 px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-1xl hover:from-primary-600 hover:to-primary-700 transition-all shadow-lg shadow-primary-500/30">
+              <Link
+                href={`/properties/?search=${searchQuery}`}
+                className="absolute right-3 px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-1xl hover:from-primary-600 hover:to-primary-700 transition-all shadow-lg shadow-primary-500/30"
+              >
                 Search
               </Link>
             </div>

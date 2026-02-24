@@ -48,7 +48,7 @@ export default function BlogSidebar({ relatedBlogs, currentBlog }: BlogSidebarPr
             .map((category) => (
               <Link
                 key={category}
-                href="/blog"
+                href="/blogs"
                 className={`block px-4 py-2.5 rounded-lg text-sm transition-colors ${
                   currentBlog.category === category
                     ? "bg-amber-50 text-amber-800 font-medium"

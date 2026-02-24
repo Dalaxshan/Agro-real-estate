@@ -234,7 +234,7 @@ export default async function BlogDetailPage({
             <div className="mt-8 pt-8 border-t border-stone-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <ShareButtons title={blog.title} slug={blog.slug} />
               <Link
-                href="/blog"
+                href="/blogs"
                 className="text-amber-800 hover:text-amber-900 font-medium flex items-center gap-2 transition-colors"
               >
                 <svg
@@ -322,7 +322,7 @@ export default async function BlogDetailPage({
                 return (
                   <Link
                     key={relatedBlog.id}
-                    href={`/blog/${relatedBlog.slug}`}
+                    href={`/blogs/${relatedBlog.slug}`}
                     className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100 hover:shadow-xl transition-all duration-500"
                   >
                     <div className="relative h-48 overflow-hidden">
@@ -349,7 +349,7 @@ export default async function BlogDetailPage({
 
           <div className="text-center mt-10">
             <Link
-              href="/blog"
+              href="/blogs"
               className="inline-flex items-center gap-2 bg-amber-800 hover:bg-amber-900 text-white px-8 py-3.5 rounded-lg font-medium transition-colors shadow-lg shadow-amber-800/20"
             >
               View All Articles

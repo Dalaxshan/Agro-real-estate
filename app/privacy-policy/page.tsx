@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { AlertCircle, CheckCircle, Shield } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Tranquille Real Estate",
@@ -222,27 +223,30 @@ export default function PrivacyPolicyPage() {
       </section>
 
       {/* Content */}
-      <section className="container-blog py-12 lg:py-16">
-        <div className="max-w-10xl mx-auto">
-          {/* Intro */}
-          <div className="bg-amber-50/50 border border-amber-100 rounded-2xl p-6 md:p-8 mb-12">
-            <p className="text-amber-900/80 leading-relaxed text-lg">
-              At <strong>Tranquille Real Estate</strong>, we are committed to
-              protecting your privacy and ensuring the security of your personal
-              information. This Privacy Policy describes how we collect, use,
-              disclose, and safeguard your data when you visit our website or
-              use our real estate services.
+      <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="rounded-2xl bg-white p-8 shadow-lg dark:bg-gray-800 md:p-12">
+          {/* Introduction */}
+          <div className="mb-10 rounded-xl bg-emerald-50 p-6 dark:bg-emerald-900/20">
+            <div className="mb-3 flex items-center gap-2">
+              <Shield className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+                Your Privacy Matters
+              </h2>
+            </div>
+            <p className="text-gray-700 dark:text-gray-300">
+              At <strong>Tranquille Real Estate Pvt Ltd</strong>, we are
+              committed to protecting your privacy and ensuring the security of
+              your personal information. This Privacy Policy describes how we
+              collect, use, disclose, and safeguard your data when you visit our
+              website or use our real estate services.
             </p>
           </div>
 
           {/* Sections */}
-          <div className="space-y-10">
+          <div className="space-y-8">
             {sections.map((section, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl border border-stone-100 p-6 md:p-8 shadow-sm"
-              >
-                <h2 className="text-xl md:text-2xl font-serif font-bold text-gray-900 mb-4">
+              <section key={index}>
+                <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
                   {section.title}
                 </h2>
 
@@ -250,13 +254,13 @@ export default function PrivacyPolicyPage() {
                   {section.content.map((block, blockIndex) => (
                     <div key={blockIndex}>
                       {block.subtitle && (
-                        <h3 className="text-lg font-semibold text-gray-800 mb-2 mt-4 first:mt-0">
+                        <h3 className="mb-2 mt-4 text-lg font-semibold text-gray-800 first:mt-0 dark:text-gray-200">
                           {block.subtitle}
                         </h3>
                       )}
 
                       {block.text && (
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-gray-700 dark:text-gray-300">
                           {block.text}
                         </p>
                       )}
@@ -266,35 +270,63 @@ export default function PrivacyPolicyPage() {
                           {block.list.map((item, itemIndex) => (
                             <li
                               key={itemIndex}
-                              className="flex items-start gap-3 text-gray-600"
+                              className="flex items-start gap-2"
                             >
-                              <svg
-                                className="w-5 h-5 text-amber-700 flex-shrink-0 mt-0.5"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M9 12l2 2 4-4"
-                                />
-                              </svg>
-                              <span className="leading-relaxed">{item}</span>
+                              <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-emerald-600 dark:text-emerald-400" />
+                              <span className="text-gray-700 dark:text-gray-300">
+                                {item}
+                              </span>
                             </li>
                           ))}
                         </ul>
                       )}
                     </div>
                   ))}
+
+                  {/* Contact Info Box - Only for last section */}
+                  {section.title === "11. Contact Information" && (
+                    <div className="mt-4 rounded-lg bg-gray-50 p-4 dark:bg-gray-700">
+                      <p className="font-semibold text-gray-900 dark:text-white">
+                        Tranquille Real Estate Pvt Ltd
+                      </p>
+                      <p className="mt-2 text-gray-700 dark:text-gray-300">
+                        Email: privacy@tranquillerealestate.com
+                      </p>
+                      <p className="text-gray-700 dark:text-gray-300">
+                        Phone: +91 1800-XXX-XXXX
+                      </p>
+                      <p className="text-gray-700 dark:text-gray-300">
+                        Address: [Your Office Address], [City], [State] - [PIN
+                        Code]
+                      </p>
+                    </div>
+                  )}
                 </div>
-              </div>
+              </section>
             ))}
           </div>
 
-          {/* Back Link */}
-          <div className="mt-10 text-center">
+          {/* Important Notice */}
+          <div className="mt-10 rounded-xl border-l-4 border-amber-500 bg-amber-50 p-6 dark:bg-amber-900/20">
+            <div className="flex gap-3">
+              <AlertCircle className="h-6 w-6 flex-shrink-0 text-amber-600 dark:text-amber-400" />
+              <div>
+                <h3 className="mb-2 font-bold text-gray-900 dark:text-white">
+                  Your Consent
+                </h3>
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  By using our website and services, you consent to the
+                  collection, use, and disclosure of your information as
+                  described in this Privacy Policy. If you do not agree with
+                  this policy, please discontinue use of our services
+                  immediately.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Back to Home */}
+         <div className="mt-10 text-center">
             <Link
               href="/"
               className="inline-flex items-center gap-2 text-amber-800 hover:text-amber-900 font-medium transition-colors"
@@ -316,7 +348,7 @@ export default function PrivacyPolicyPage() {
             </Link>
           </div>
         </div>
-      </section>
+      </div>
     </>
   );
 }

@@ -1,5 +1,5 @@
 import {
-  Home,
+ 
   MapPin,
   Phone,
   Mail,
@@ -13,6 +13,61 @@ import {
 } from "lucide-react";
 
 export default function Footer() {
+
+  const QuickLink = [
+    {
+      title: 'About Us',
+      path: 'about-us'
+    },
+    {
+      title: 'Our Properties',
+      path: 'properties'
+    },
+    {
+      title: 'New Projects',
+      path: 'projects'
+    },
+    {
+      title: 'Our Agents',
+      path: 'our-agents'
+    },
+    {
+      title: 'Blog & News',
+      path: 'blogs'
+    },
+    {
+      title: 'Careers',
+      path: 'careers'
+    }
+   ]
+
+  const PropertyTypes = [
+    {
+      title: 'Buying home guide',
+      path: '/blogs/ultimate-guide-buying-first-home-2024'
+    },
+    {
+      title: 'Neighborhood guide',
+      path: '/blogs/top-10-neighborhoods-families'
+    },
+    {
+      title: 'Property selling tips',
+      path: '/blogs/home-staging-tips-sell-faster'
+    },
+    {
+      title: 'Investment',
+      path: '/blogs/real-estate-investment-strategies-beginners'
+    },
+    {
+      title: 'Sustainable home',
+      path: '/blogs/sustainable-homes-future-living'
+    },
+    {
+      title: 'Market Analysis',
+      path: '/blogs/understanding-real-estate-market-trends-2024'
+    }
+   ]
+
   return (
     <footer id="contact" className="bg-dark pt-20 pb-8 text-white">
       <div className="max-w-7xl mx-auto px-6">
@@ -51,20 +106,13 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold text-lg mb-6">Quick Links</h3>
             <ul className="space-y-3 text-gray-400">
-              {[
-                "About Us",
-                "Our Properties",
-                "New Projects",
-                "Our Agents",
-                "Blog & News",
-                "Careers",
-              ].map((link) => (
-                <li key={link}>
+              {QuickLink.map((link) => (
+                <li key={link.title}>
                   <a
-                    href="#"
+                    href={link.path}
                     className="hover:text-accent transition flex items-center gap-2"
                   >
-                    <ArrowRight className="w-3 h-3 text-primary-400" /> {link}
+                    <ArrowRight className="w-3 h-3 text-primary-400" /> {link.title}
                   </a>
                 </li>
               ))}
@@ -74,23 +122,16 @@ export default function Footer() {
           {/* Property Types */}
           <div>
             <h3 className="text-white font-bold text-lg mb-6">
-              Property Types
+              Our Blogs
             </h3>
             <ul className="space-y-3 text-gray-400">
-              {[
-                "Houses for Sale",
-                "Apartments for Rent",
-                "Luxury Villas",
-                "Land for Sale",
-                "Commercial Properties",
-                "Holiday Homes",
-              ].map((link) => (
-                <li key={link}>
+              {PropertyTypes.map((item) => (
+                <li key={item.title}>
                   <a
-                    href="#"
+                    href={item.path}
                     className="hover:text-accent transition flex items-center gap-2"
                   >
-                    <ArrowRight className="w-3 h-3 text-primary-400" /> {link}
+                    <ArrowRight className="w-3 h-3 text-primary-400" /> {item.title}
                   </a>
                 </li>
               ))}
@@ -135,10 +176,10 @@ export default function Footer() {
                   <Mail className="text-accent w-5 h-5" />
                 </div>
                 <a
-                  href="mailto:info@agroproperty.lk"
+                  href="mailto:info@tranquilleproperty.lk"
                   className="text-gray-400 hover:text-accent transition"
                 >
-                  info@agroproperty.lk
+                  info@tranquilleproperty.lk
                 </a>
               </li>
             </ul>
@@ -169,22 +210,22 @@ export default function Footer() {
             </p>
             <div className="flex gap-6">
               <a
-                href="#"
+                href="/privacy-policy"
                 className="text-gray-300 hover:text-accent text-sm transition"
               >
                 Privacy Policy
               </a>
               <a
-                href="#"
+                href="/terms-of-service"
                 className="text-gray-300 hover:text-accent text-sm transition"
               >
                 Terms of Service
               </a>
               <a
-                href="#"
+                href="/branches"
                 className="text-gray-300 hover:text-accent text-sm transition"
               >
-                Sitemap
+                Braches
               </a>
             </div>
           </div>

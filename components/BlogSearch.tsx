@@ -37,7 +37,7 @@ export default function BlogSearch({
           placeholder="Search articles..."
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
-          className="w-full pl-12 pr-4 py-4 rounded-xl border border-stone-200 bg-white focus:outline-none focus:ring-2 focus:ring-amber-700/20 focus:border-amber-700 text-gray-800 text-lg shadow-sm"
+          className="w-full pl-12 pr-4 py-4 rounded-5xl border border-stone-200 bg-white focus:outline-none focus:ring-2 focus:ring-amber-700/20 focus:border-amber-700 text-gray-800 text-lg shadow-sm"
         />
       </div>
 
