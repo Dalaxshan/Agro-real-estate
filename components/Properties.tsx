@@ -1,12 +1,11 @@
 "use client";
 
-    import { ArrowRight} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 
 import Link from "next/link";
 import { properties } from "@/data/properties";
 import { PropertyCard } from "./PropertyCard";
-
 
 export const Properties = () => {
   const [filter, setFilter] = useState("All");
@@ -51,12 +50,15 @@ export const Properties = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProperties.map((prop) => (
-           <PropertyCard key={prop.id} prop={prop} />
+            <PropertyCard key={prop.id} prop={prop} />
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <Link href="/properties" className="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50">
+          <Link
+            href="/properties"
+            className="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50"
+          >
             View All Properties
             <ArrowRight className="w-5 h-5" />
           </Link>
