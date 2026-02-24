@@ -1,5 +1,6 @@
 import { ShieldCheck, HandCoins, Headphones, FileText } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const features = [
   {
@@ -108,9 +109,9 @@ export const About = () => {
               ))}
             </div>
 
-            <button className="mt-8 inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg shadow-primary-500/30">
+            <Link href="/about-us" className="mt-8 inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg shadow-primary-500/30">
               Learn More About Us
-            </button>
+            </Link>
           </div>
         </div>
       </div>
