@@ -7,6 +7,7 @@ import Link from "next/link";
 import { properties } from "@/data/properties";
 import { PropertyCard } from "./PropertyCard";
 
+
 export const Properties = () => {
   const [filter, setFilter] = useState("All");
 
